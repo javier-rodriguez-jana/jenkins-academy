@@ -1,28 +1,29 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:14' // Especifica la imagen de Docker que quieres usar
-            args '-v /root/.npm:/root/.npm' // Opcional: Montar el volumen para cachear las dependencias de npm
-        }
+  agent {
+    docker {
+      image 'node:18.17.1-alpine3.18'
     }
-    stages {
-        stage('Install') {
-            steps {
-                echo 'Installing dependencies...'
-                sh 'npm install'
-            }
-        }
-        stage('Build') {
-            steps {
-                echo 'Building the project...'
-                sh 'npm run build'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                sh 'npm test'
-            }
-        }
+
+  }
+  stages {
+    stage('Echo Build') {
+      steps {
+        sh 'echo Build'
+      }
     }
+
+    stage('Echo Test') {
+      steps {
+        sh 'sleep 5'
+        sh 'echo Success!'
+      }
+    }
+
+    stage('Echo Deploy') {
+      steps {
+        echo 'Deploy'
+      }
+    }
+
+  }
 }
