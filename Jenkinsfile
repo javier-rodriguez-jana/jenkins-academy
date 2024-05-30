@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:14' // Especifica la imagen de Docker que quieres usar
+            args '-v /root/.npm:/root/.npm' // Opcional: Montar el volumen para cachear las dependencias de npm
+        }
+    }
     stages {
         stage('Install') {
             steps {
