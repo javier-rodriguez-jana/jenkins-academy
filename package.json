@@ -1,0 +1,18 @@
+{
+  "name": "dummy-project",
+  "version": "1.0.0",
+  "description": "A dummy Node.js project for Jenkins Academy",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Building the project...'",
+    "test": "echo 'Running tests...'"
+  },
+  "author": "Javier Rodriguez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.3"
+  }
+}
